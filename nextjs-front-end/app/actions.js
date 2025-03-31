@@ -11,7 +11,7 @@ export const submitURL = async formData => {
         throw new Error(`Submitted an invalid URL: ${userSubmittedURL}`);
     }
 
-    const response = await fetch(`http://localhost:8000/generate-qr/?url=${encodeURIComponent(validationResultOfUserInput.data)}`, {
+    const response = await fetch(`${process.env.API_URL}?url=${encodeURIComponent(validationResultOfUserInput.data)}`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json"
