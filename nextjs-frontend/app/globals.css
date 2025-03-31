@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    position: relative;
+    min-width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    background: black;
+    color: white;
+  }
+
+  button:hover {
+    cursor: pointer;
+  }
+}

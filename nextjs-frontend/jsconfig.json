@@ -1,0 +1,9 @@
+{
+  "compilerOptions": {
+    "paths": {
+      "server-components/*": ["./app/_components/server/*"],
+      "client-components/*": ["./app/_components/client/*"],
+      "@/*": ["./*"]
+    }
+  }
+}
