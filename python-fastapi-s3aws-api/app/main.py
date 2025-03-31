@@ -6,7 +6,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from routes.qr import router as qr_router
 from configs.constants import (
     DEFAULT_LOG_MESSAGE_FORMAT,
-    ALLOWED_ORIGINS
+    ALLOWED_ORIGINS, ALLOWED_METHODS, ALLOWED_HEADERS
 )
 
 
@@ -17,8 +17,8 @@ app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
     allow_origins=ALLOWED_ORIGINS,
-    allow_methods=["POST"],
-    allow_headers=["*"]
+    allow_methods=ALLOWED_METHODS,
+    allow_headers=ALLOWED_HEADERS
 )
 
 app.include_router(qr_router)
