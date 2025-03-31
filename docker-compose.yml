@@ -1,0 +1,24 @@
+networks:
+  nextjs_fastapi_network:
+    driver: bridge
+
+services:
+  back-end:
+    build: ./python-fastapi-s3aws-api
+    ports:
+      - "8000:8000"
+    env_file:
+      - ./python-fastapi-s3aws-api/.env.local
+    networks:
+      - nextjs_fastapi_network
+
+  front-end:
+    build: ./nextjs-front-end
+    ports:
+      - "3000:3000"
+    depends_on:
+      - back-end
+    environment:
+      - API_URL=http://back-end:8000/generate-qr/
+    networks:
+      - nextjs_fastapi_network
