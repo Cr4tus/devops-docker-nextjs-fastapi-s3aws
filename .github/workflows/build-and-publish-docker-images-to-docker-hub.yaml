@@ -4,7 +4,7 @@ on:
 
 jobs:
   build_and_publish_image:
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout Repo
         uses: actions/checkout@v4
