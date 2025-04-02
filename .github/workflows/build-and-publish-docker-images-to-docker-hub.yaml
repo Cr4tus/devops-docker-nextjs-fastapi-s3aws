@@ -1,6 +1,11 @@
 name: Build and Publish Docker Images to Docker Hub
 on:
-  [workflow_dispatch]
+  push:
+    branches:
+      - main
+    paths:
+      - 'python-fastapi-s3aws-api/**'
+      - 'nextjs-front-end/**'
 
 jobs:
   build_and_publish_image:
