@@ -10,9 +10,12 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Build Docker Images
-        run: docker build ./python-fastapi-s3aws-api/ -t cr4tus/devops-back-end:latest
+        run: |
+          docker build ./python-fastapi-s3aws-api/ -t cr4tus/devops-back-end:latest
+          docker build ./nextjs-front-end -t cr4tus/devops-front-end:latest
 
       - name: Push Docker Images to Docker Hub
         run: |
           docker login -u cr4tus -p ${{ secrets.DOCKER_HUB_TOKEN }}
           docker push cr4tus/devops-back-end:latest
+          docker push cr4tus/devops-front-end:latest
