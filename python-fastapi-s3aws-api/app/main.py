@@ -22,3 +22,7 @@ app.add_middleware(
 )
 
 app.include_router(qr_router)
+
+
+# this commend exists only for testing if the GitHub Actions workflow will be triggered,
+# and it will be erased within the next commit.
