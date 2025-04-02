@@ -36,6 +36,11 @@ This project showcases a full-stack web application integrating a Next.js front-
 
 - **Orchestration**: Docker Compose facilitates the management of multi-container applications, streamlining development workflows.
 
+- **CI/CD Pipeline**:  GitHub Actions automates the process of building and pushing Docker images to Docker Hub, ensuring a smooth deployment workflow.
+
+    - [Back-end (public Docker Hub image)](https://hub.docker.com/repository/docker/cr4tus/devops-back-end/general)
+    - [Front-end (public Docker Hub image)](https://hub.docker.com/repository/docker/cr4tus/devops-front-end/general)
+
 ## Getting Started
 
 To set up and run this project locally, follow these steps:
